@@ -1,0 +1,33 @@
+<div class="page-header">
+  <h1>Job Description List</h1>
+</div>
+<div class="row">
+  <div class="col-xs-7">
+    <input type="text" class="form-control" ng-model="query.owner" placeholder="Search by Name">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <hr>
+  </div>
+</div>
+<div class="row" ng-switch on="jobDescriptions.length">
+  <ul ng-switch-when="0">
+    <li><em>No Job Descriptions in database. Would you like to <a href="#/job-descriptions/new">create one</a>?</li>
+  </ul>
+  <div ng-switch-default>
+    <table class="table table-striped">
+      <tr>
+        <th>Name</th>
+        <th>Schedule</th>
+        <th>Run Now</th>
+      </tr>
+      <tr ng-repeat="jobDescription in jobDescriptions | filter:query">
+        <td><a href="#/job-description/{{jobDescription._id}}">{{jobDescription.owner}}</a></td>
+        <td>{{jobDescription.schedule}}</td>
+        <td><button type="button" class="btn btn-success" ng-click="launchJob(jobDescription._id)">Launch</button></td>
+      </tr>
+    </table>
+  </div>
+</div>
+<p>&nbsp;</p>

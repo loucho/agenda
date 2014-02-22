@@ -1,0 +1,44 @@
+<div class="page-header">
+  <h1>Component List</h1>
+</div>
+<div class="row">
+  <div class="col-xs-6">
+    <input type="text" class="form-control" ng-model="query.name" placeholder="Search by Name">
+  </div>
+  <div class="col-xs-6">
+    <select ng-model="query.type" class="form-control" ng-options="type.code as type.name for type in types">
+    </select>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <input type="text" class="form-control" ng-model="query.description" placeholder="Search by Description">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <hr>
+  </div>
+</div>
+<div class="row" ng-switch on="components.length">
+  <ul ng-switch-when="0">
+    <li><em>No Components in database. Would you like to <a href="#/components/new">create one</a>?</li>
+  </ul>
+  <div ng-switch-default>
+    <table class="table table-striped">
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Created on</th>
+      </tr>
+      <tr ng-repeat="component in components | filter:query">
+        <td><a href="#/component/{{component._id}}">{{component.name}}</a></td>
+        <td>{{getType(component.type)}}</td>
+        <td>{{component.description}}</td>
+        <td>{{component.created}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<p>&nbsp;</p>

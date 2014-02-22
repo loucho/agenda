@@ -1,0 +1,35 @@
+<div class="page-header">
+  <h1>Edit Component</h1>
+</div>
+<form role="form" ng-submit="saveComponent()">
+  <div class="form-group">
+    <label for="name">Name</label> <input type="text" ng-model="component.name" class="form-control" id="name" placeholder="Name">
+  </div>
+    <div class="form-group">
+    <label for="type">Type</label> <select ng-model="component.type" class="form-control" id="type" ng-options="componentType.value as componentType.name for componentType in componentTypes" placeholder="Select One">
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label> <input type="text" ng-model="component.description" class="form-control" id="description" placeholder="Describe what your component does">
+  </div>
+  <div class="form-group">
+    <label for="process">Process Function</label>
+    <textarea ui-codemirror="editorOptions" rows="25" class="" ng-model="component.processCallback" id="process" placeholder="Here you can write the code to be executed when your component is invoked!"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="config">Configuration Object</label>
+    <textarea class="form-control" ng-model="component.config" id="config" placeholder="Here you should create the JSON object that will contain the configuration options for your component"></textarea>
+  </div>
+  <p>
+  </p>
+  <div class="row">
+    <div class="col-xs-6">
+      <a href="#/components" class="btn btn-default" role="button"> <span class="glyphicon glyphicon-arrow-left"></span> Back to Components List
+      </a>
+    </div>
+    <div class="col-xs-6">
+      <button class="btn btn-primary pull-right" type="submit">Save &raquo;</button>
+    </div>
+  </div>
+  <p>&nbsp;</p>
+</form>

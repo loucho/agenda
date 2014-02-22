@@ -1,0 +1,47 @@
+<div class="page-header">
+  <h1>Job Monitor</h1>
+</div>
+<div class="row">
+  <div class="col-xs-7">
+    <label for="status">Status</label> <select ng-options="status.code as status.name for status in stati" ng-model="query.status"
+      class="form-control" id="status">
+    </select>
+  </div>
+  <div class="col-xs-1 pull-right">
+  <label for="refresh">Refresh</label>
+    <button id="refresh" type="button" class="btn btn-success" ng-click="refresh()"><span class="glyphicon glyphicon-refresh"></span></button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <hr>
+  </div>
+</div>
+<div class="row" ng-switch on="jobs.length">
+  <div ng-switch-when="0">
+    <p>
+      <em>No Jobs running at the moment 
+    </p>
+  </div>
+  <div ng-switch-default>
+    <table class="table table-responsive table-condensed">
+      <tr>
+        <th>Job Description</th>
+        <th>Status</th>
+        <th>Current Component</th>
+        <th>Started</th>
+        <th>Completed</th>
+        <th>View Logs</th>
+      </tr>
+      <tr ng-repeat="job in jobs | filter:query" ng-class="rowClass(job.status)">
+        <td>{{job.jobDescription.owner}}</td>
+        <td>{{getStatusName(job.status)}}</td>
+        <td>{{job.component.name}}</td>
+        <td>{{job.started}}</td>
+        <td>{{job.finished}}</td>
+        <td><a href="#/job/{{job._id}}" type="button" class="btn btn-info">view</a></td>
+      </tr>
+    </table>
+  </div>
+</div>
+<p>&nbsp;</p>

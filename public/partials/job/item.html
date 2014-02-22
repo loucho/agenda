@@ -1,0 +1,25 @@
+<div class="page-header">
+  <h1>
+    Log Information for Job: {{job._id}} &nbsp;
+    <button id="refresh" type="button" class="btn btn-success" ng-click="refresh()">
+      <span class="glyphicon glyphicon-refresh"></span></button>
+  </h1>
+</div>
+<div class="container">
+  <table class='table table-condensed'>
+    <tr>
+      <th>Timestamp</th>
+      <th>Sender</th>
+      <th>Message</th>
+      <th>Level</th>
+      <th>Component Id</th>
+    </tr>
+    <tr ng-repeat="log in logs" ng-class="rowClass(log.event.json.level)">
+      <td>{{log.event.json.timestamp}}</td>
+      <td>{{log.event.json.type}}</td>
+      <td>{{log.event.json.message}}</td>
+      <td>{{log.event.json.level}}</td>
+      <td>{{log.event.json.jobInfo.componentId}}</td>
+    </tr>
+  </table>
+</div>

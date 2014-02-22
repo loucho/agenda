@@ -1,0 +1,40 @@
+extends layout
+
+block content
+    nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse(role='navigation')
+        div.navbar-header
+            a.navbar-brand(href='#/home')= title + " "
+                img.brand(src='images/logo.png')
+        div.collapse.navbar-collapse
+            ul.nav.navbar-nav
+                li
+                    a.dropdown-toggle(href='#' data-toggle='dropdown') 
+                        span.glyphicon.glyphicon-link  Components
+                        b.caret
+                    ul.dropdown-menu
+                        li
+                            a(href='#/components') List
+                        li
+                            a(href='#/components/new') New
+                li
+                    a.dropdown-toggle(href='#' data-toggle='dropdown')
+                        span.glyphicon.glyphicon-list  Job Descriptions
+                        b.caret
+                    ul.dropdown-menu
+                        li
+                            a(href='#/job-descriptions') List
+                        li
+                            a(href='#/job-descriptions/new') New
+                li
+                    a(href='#/jobs')
+                        span.glyphicon.glyphicon-wrench  Job Monitor
+            ul.nav.navbar-nav.pull-right
+                li.dropdown
+                    a.dropdown-toggle(href='#' data-toggle='dropdown')
+                        span.glyphicon.glyphicon-user= " " + user
+                        b.caret
+                    ul.dropdown-menu
+                        li
+                            a(href='/logout') Logout
+    div.container
+        div(ng-view)

@@ -1,0 +1,15 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+        title= title
+        link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')   
+    body
+        block content
+            div.container
+                div.form-signin
+                    img(src='/images/login.jpg')
+                    a.btn.btn-large.btn-default(type='button' href='/auth/fi-ware') Sign in with FI-WARE 
+                        img.provider-logo(src='/images/FI-WARE.png')

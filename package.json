@@ -1,0 +1,24 @@
+{
+  "name": "shakengo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "nodejs app.js"
+  },
+  "dependencies": {
+    "express": "3.4.7",
+    "jade": "*",
+    "monk": "*",
+    "mongodb": "*",
+    "nconf" : "*",
+    "loggly": "*",
+    "amqp": "*",
+    "request": "*",
+    "underscore":"*",
+    "async": "*",
+    "node-uuid":"*",
+    "node-google-translate": "*",
+    "sendgrid": "*",
+    "form-data": "*"
+  }
+}
