@@ -1,88 +1,8 @@
 {
-   "oAuth": {
-       "clientId": "450",
-       "clientSecret": "a0a492fdb43230bd92b61b1e7a1aaffbd44ebb5b363e78bdfbca4f110e945e232315703083ed08b30107d9534cc5fcca5a73c799b54bbc288338402908396fac",
-       "idmURL": "https://account.lab.fi-ware.eu",
-       "callbackURL": "http://130.206.83.9:3000/login"
-   },
-  "loggly": {
-    "token": "eb971c24-2deb-4444-8eb1-1d81b2a3154c",
-    "subdomain": "shakengo",
-    "auth": {
-        "username": "chechedotmx",
-        "password": "Shake2014"
-        },
-    "json": "true"
-    },
-    "jobDescriptions": {
-        "defaultInputCallback": "workercallbacks/inputCallback.js",
-        "defaultOutputCallback": "workercallbacks/outputCallback.js",
-        "finalOutputCallback": "workercallbacks/finalOutputCallback.js"
-    },
     "mongo": {
-        "connectionString": "localhost:27017/shakengo"
+        "connectionString": "localhost:27017/agenda"
         },
     "server": {
         "port": "3000"
-    },
-    "rabbit": {
-    	"connection": {
-	        "host": "130.206.82.17",
-	        "port": "5672",
-	        "login": "admin",
-	        "password": "password"
-	    	},
-        "exchange": {
-        	"name": "shakengo",
-        	"options":{
-        		"type": "topic",
-        		"durable": "true",
-        		"autoDelete": "false",
-        		"confirm": "true"
-        	},
-        	"routingKey": "public"
-        },
-        "queue" :{
-            "name": "shakengo" 
-        }
-    },
-    "scheduler":{
-        "endworkeruri":"http://130.206.83.9:3000/schedule/next"
-    },
-    "cmdiRequests":{
-        "authentication" : {
-            "tokenAuthUrl" : "http://cloud.lab.fi-ware.eu/keystone/v2.0/tokens",
-            "tenantId" : "00000000000000000000000000000304",
-            "email":"sergio@cheche.mx",
-            "password" : "devilgirl"
-        },
-        "containerUri": "http://cloud.lab.fi-ware.eu/RegionOne/object-store/v1/AUTH_00000000000000000000000000000304/shakengo"
-    },
-    "label":{
-        "syntaxError": "Syntax Error",
-        "otherError" :"Other Error",
-        "inputcallbackstart": "Input Callback Starting",
-        "inputcallbackerror": "Input Callback Error",
-        "inputcallbackdone": "Input Callback Done",
-        "processcallbackstart": "Process Callback Starting",
-        "processcallbackdone": "Process Callback Done",
-        "processcallbackerror": "Process Callback Error",
-        "outputcallbackstart": "Output Callback Starting",
-        "outputcallbackdone": "Output Callback Done",
-        "outputcallbackerror": "Output Callback Error",
-        "workerrunconnectionready": "Connection ready to connect",
-        "queueconnectionready": "Waiting for messages from queue",
-        "queuejobreceived": "Job Received",
-        "jobsenttoscheduler":"Job send to scheduler",
-        "jobsenttoschedulererror":"Error on Job send to scheduler",
-        "jobstart": "Starting Job",
-        "jobstarterror": "Starting job error",
-        "jobsenttoqueue": "Job sent to queue",
-        "jobsenttoqueuerror": "Job sent to queue error",
-        "jobhaserrorflag": "The Job trying to being processed has an error on the previous process",
-        "jobhasnoitems": "The Job ran out of components to process",
-        "jobupdatingerror": "The Job couldn´t be updated on database",
-        "jobrequeue": "The job is requeuing",
-        "notbuffererror": "Error on the request, the object in the package is not a NodeJS valid buffer" 
     }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "shakengo",
+  "name": "agenda",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -11,14 +11,8 @@
     "monk": "*",
     "mongodb": "*",
     "nconf" : "*",
-    "loggly": "*",
-    "amqp": "*",
     "request": "*",
     "underscore":"*",
-    "async": "*",
-    "node-uuid":"*",
-    "node-google-translate": "*",
-    "sendgrid": "*",
-    "form-data": "*"
+    "sendgrid": "*"
   }
 }
