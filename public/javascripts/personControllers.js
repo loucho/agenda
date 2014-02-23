@@ -5,7 +5,7 @@ personControllers.controller('PersonListController', ['$scope', 'Person', '$loca
     $scope.persons = Person.query();
 
     $scope.deletePerson = function(id){
-        Person.$delete({personId: id}, function(){
+        Person.delete({}, {'personId': id}, function(){
             $location.path('persons');
         });
     };
