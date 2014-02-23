@@ -4,10 +4,6 @@ body {
 }
 
 .navbar .navbar-brand {
-    max-height: 40px;
-    overflow: visible;
-    padding-top: 0;
-    padding-bottom: 0;
     font-weight: bolder;
 }
 
@@ -44,8 +40,6 @@ img.provider-logo {
 img.brand {
     max-width: 90px;
 }
-
-
 
 .form-signin .form-signin-heading,.form-signin .checkbox {
 	margin-bottom: 10px;
