@@ -18,7 +18,7 @@ personControllers.controller('PersonItemController', ['$scope', '$routeParams', 
             };
 
             $scope.addEmail = function(){
-                $scope.person.emails.push("");
+                $scope.person.emails.push({value:""});
             };
 
             $scope.deletePhone = function(phone){
@@ -27,7 +27,7 @@ personControllers.controller('PersonItemController', ['$scope', '$routeParams', 
             };
 
             $scope.addPhone = function(){
-                $scope.person.phones.push("");
+                $scope.person.phones.push({value:""});
             };
 
             $scope.savePerson = function(){
@@ -51,8 +51,8 @@ personControllers.controller('PersonNewController', ['$scope', 'Person', '$locat
                 last_name: "",
                 second_last_name: "",
                 created: "",
-                emails: [],
-                phones: []
+                emails: [{value:""}],
+                phones: [{value:""}]
             };
 
             $scope.deleteEmail = function(email){
@@ -61,7 +61,7 @@ personControllers.controller('PersonNewController', ['$scope', 'Person', '$locat
             };
 
             $scope.addEmail = function(){
-                $scope.person.emails.push("");
+                $scope.person.emails.push({value:""});
             };
 
             $scope.deletePhone = function(phone){
@@ -70,7 +70,7 @@ personControllers.controller('PersonNewController', ['$scope', 'Person', '$locat
             };
 
             $scope.addPhone = function(){
-                $scope.person.phones.push("");
+                $scope.person.phones.push({value:""});
             };
 
             $scope.savePerson = function(){

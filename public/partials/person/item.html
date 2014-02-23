@@ -17,9 +17,9 @@
       <button type="button" class="btn btn-xs btn-primary" ng-click="addEmail()">
         <span class="glyphicon glyphicon-plus"> </span>
       </button>
-      <div ng-repeat="email in person.emails track by $index" class="form-group">
+      <div ng-repeat="email in person.emails" class="form-group">
         <div class="input-group">
-          <input type="text" class="form-control" ng-model="email" placeholder="Escribe un correo">
+          <input type="text" class="form-control" ng-model="email.value" placeholder="Escribe un correo">
           <span class="input-group-btn">
             <button class="btn btn-danger" type="button" ng-click="deleteEmail(email)"><span class="glyphicon glyphicon-remove"> </span></button>
           </span>
@@ -33,9 +33,9 @@
       <button type="button" class="btn btn-xs btn-primary" ng-click="addPhone()">
         <span class="glyphicon glyphicon-plus"> </span>
       </button>
-      <div ng-repeat="phone in person.phones track by $index" class="form-group">
+      <div ng-repeat="phone in person.phones" class="form-group">
         <div class="input-group">
-          <input type="text" class="form-control" ng-model="phone" placeholder="Escribe un telefono">
+          <input type="text" class="form-control" ng-model="phone.value" placeholder="Escribe un telefono">
           <span class="input-group-btn">
             <button class="btn btn-danger" type="button" ng-click="deletePhone(phone)"><span class="glyphicon glyphicon-remove"> </span></button>
           </span>
