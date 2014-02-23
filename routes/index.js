@@ -10,7 +10,7 @@ exports.app = function(req, res){
 
 };
 
-exports.welcome = function () {
+exports.welcome = function (req, res) {
     res.render('index', {
         title: 'Agenda'
     });
