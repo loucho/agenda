@@ -1,12 +1,18 @@
 var personControllers = angular.module('personControllers', []);
 
 // Managing the person list
-personControllers.controller('PersonListController', ['$scope', 'Person', '$location', function($scope, Person, $location){
+personControllers.controller('PersonListController', ['$scope', 'Person', '$location', '$dialogs', function($scope, Person, $location, $dialogs){
     $scope.persons = Person.query();
 
     $scope.deletePerson = function(id){
-        Person.delete({personId: id}, function(){
-            $location.path('persons');
+
+        var dlg = $dialogs.confirm('Estas seguro?','Esto eliminara todos los datos de la persona, esta accion no es revertible');
+        dlg.result.then(function(btn){
+            Person.delete({personId: id}, function(){
+                $location.path('persons');
+            }); 
+        },function(btn){
+                
         });
     };
 }]);
