@@ -31,6 +31,8 @@ exports.get = function(db){
  */
 exports.delete = function(db){
     return function(req, res){
+        if(!req.params.id)
+            res.error('Debe proporcionar un Id');
         var personCollection = db.get('PersonCollection');
         personCollection.remove({_id: req.params.id}, {}, function(error, person){
             res.json(person);
