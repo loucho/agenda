@@ -12,6 +12,24 @@ personControllers.controller('PersonItemController', ['$scope', '$routeParams', 
                 personId: $routeParams.personId
             });
 
+            $scope.deleteEmail = function(email){
+                var i = $scope.person.emails.indexOf(email);
+                $scope.person.emails.splice(i, 1);
+            };
+
+            $scope.addEmail = function(){
+                $scope.person.emails.push("");
+            };
+
+            $scope.deletePhone = function(phone){
+                var i = $scope.person.phones.indexOf(phone);
+                $scope.person.phones.splice(i, 1);
+            };
+
+            $scope.addPhone = function(){
+                $scope.person.phones.push("");
+            };
+
             $scope.savePerson = function(){
                 var person = $scope.person;
                 var newPerson = new Person(person);
@@ -35,6 +53,24 @@ personControllers.controller('PersonNewController', ['$scope', 'Person', '$locat
                 created: "",
                 emails: "",
                 phones: ""
+            };
+
+            $scope.deleteEmail = function(email){
+                var i = $scope.person.emails.indexOf(email);
+                $scope.person.emails.splice(i, 1);
+            };
+
+            $scope.addEmail = function(){
+                $scope.person.emails.push("");
+            };
+
+            $scope.deletePhone = function(phone){
+                var i = $scope.person.phones.indexOf(phone);
+                $scope.person.phones.splice(i, 1);
+            };
+
+            $scope.addPhone = function(){
+                $scope.person.phones.push("");
             };
 
             $scope.savePerson = function(){

@@ -11,6 +11,30 @@
   <div class="form-group">
     <label for="type">Apellido Materno</label> <input type="text" ng-model="person.second_last_name" class="form-control" id="second_last_name" placeholder="Apellido Materno">
   </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <label>Correo(s)&nbsp;</label>
+      <button type="button" class="btn btn-xs btn-primary" ng-click="addEmail()">
+        <span class="glyphicon glyphicon-plus"> </span>
+      </button>
+      <div ng-repeat="email in person.emails" class="form-group">
+        <label>correo</label>
+        <input type="text" class="form-control" ng-model="email" placeholder="Escribe un correo">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <label>Telefono(s)&nbsp;</label>
+      <button type="button" class="btn btn-xs btn-primary" ng-click="addPhone()">
+        <span class="glyphicon glyphicon-plus"> </span>
+      </button>
+      <div ng-repeat="phone in person.phones" class="form-group">
+        <label>correo</label>
+        <input type="text" class="form-control" ng-model="phone" placeholder="Escribe un Telefono">
+      </div>
+    </div>
+  </div>
   <p>
   </p>
   <div class="row">

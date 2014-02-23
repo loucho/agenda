@@ -11,7 +11,7 @@ exports.app = function(req, res){
 };
 
 exports.welcome = function (req, res) {
-    res.render('index', {
+    res.render('welcome', {
         title: 'Agenda'
     });
 }
