@@ -1,0 +1,26 @@
+<div class="page-header">
+  <h1>Editar Persona</h1>
+</div>
+<form role="form" ng-submit="savePerson()">
+  <div class="form-group">
+    <label for="name">Name</label> <input type="text" ng-model="person.name" class="form-control" id="name" placeholder="Nombre">
+  </div>
+  <div class="form-group">
+    <label for="type">Apellido Paterno</label> <input type="text" ng-model="person.last_name" class="form-control" id="last_name" placeholder="Apellido Paterno">
+  </div>
+  <div class="form-group">
+    <label for="type">Apellido Materno</label> <input type="text" ng-model="person.second_last_name" class="form-control" id="second_last_name" placeholder="Apellido Materno">
+  </div>
+  <p>
+  </p>
+  <div class="row">
+    <div class="col-xs-6">
+      <a href="#/persons" class="btn btn-default" role="button"> <span class="glyphicon glyphicon-arrow-left"></span> Regresar a la lista
+      </a>
+    </div>
+    <div class="col-xs-6">
+      <button class="btn btn-primary pull-right" type="submit">Guardar &raquo;</button>
+    </div>
+  </div>
+  <p>&nbsp;</p>
+</form>

@@ -1,0 +1,38 @@
+<div class="page-header">
+  <h1>Lista de Personas</h1>
+</div>
+<div class="row">
+  <div class="col-xs-6">
+    <input type="text" class="form-control" ng-model="query.name" placeholder="Buscar por Nombre">
+  </div>
+  <div class="col-xs-6">
+    <input type="text" class="form-control" ng-model="query.email" placeholder="Buscar por Correo">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <hr>
+  </div>
+</div>
+<div class="row" ng-switch on="persons.length">
+  <ul ng-switch-when="0">
+    <li><em>No existen Personas en la base de datos. Quieres <a href="#/persons/new">agregar una</a>?</li>
+  </ul>
+  <div ng-switch-default>
+    <table class="table table-striped">
+      <tr>
+        <th>Name</th>
+        <th>Correos</th>
+        <th>Telefonos</th>
+        <th>Agregado el</th>
+      </tr>
+      <tr ng-repeat="person in persons | filter:query">
+        <td><a href="#/person/{{person._id}}">{{person.name + " " + person.last_name + " " + person.second_last_name}}</a></td>
+        <td>{{person.emails[0]}}</td>
+        <td>{{person.phones[0]}}</td>
+        <td>{{person.created}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<p>&nbsp;</p>
