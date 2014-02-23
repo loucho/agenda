@@ -18,7 +18,8 @@
         <span class="glyphicon glyphicon-plus"> </span>
       </button>
       <div ng-repeat="email in person.emails" class="form-group">
-        <label>correo</label>
+        <label>Correo</label>
+        <button type="button" class="btn btn-xs btn-primary" ng-click="deleteEmail(email)">&times;</button>
         <input type="text" class="form-control" ng-model="email" placeholder="Escribe un correo">
       </div>
     </div>
@@ -30,7 +31,8 @@
         <span class="glyphicon glyphicon-plus"> </span>
       </button>
       <div ng-repeat="phone in person.phones" class="form-group">
-        <label>correo</label>
+        <label>Telefono</label>
+        <button type="button" class="btn btn-xs btn-primary" ng-click="deletePhone(phone)">&times;</button>
         <input type="text" class="form-control" ng-model="phone" placeholder="Escribe un Telefono">
       </div>
     </div>
