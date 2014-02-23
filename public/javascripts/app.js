@@ -1,4 +1,4 @@
-var agenda = angular.module('agenda', ['ngRoute', 'ngAnimate', 'personControllers', 'homeControllers', 'agendaServices', 'ui.bootstrap', 'chieffancypants.loadingBar']);
+var agenda = angular.module('agenda', ['ngRoute', 'ngAnimate', 'personControllers', 'homeControllers', 'agendaServices', 'chieffancypants.loadingBar']);
 
 agenda.config(['$routeProvider', 'cfpLoadingBarProvider', function($routeProvider, cfpLoadingBarProvider){
     cfpLoadingBarProvider.includeSpinner = true;
