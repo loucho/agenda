@@ -51,8 +51,8 @@ personControllers.controller('PersonNewController', ['$scope', 'Person', '$locat
                 last_name: "",
                 second_last_name: "",
                 created: "",
-                emails: "",
-                phones: ""
+                emails: [],
+                phones: []
             };
 
             $scope.deleteEmail = function(email){
