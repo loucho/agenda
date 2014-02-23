@@ -10,24 +10,24 @@ block content
                     span.icon-bar
                     span.icon-bar
                 a.navbar-brand(href='#/home')= title
-        div.collapse.navbar-collapse(id='main-menu')
-            ul.nav.navbar-nav
-                li.dropdown
-                    a.dropdown-toggle(data-toggle='dropdown' href='#') 
-                        span.glyphicon.glyphicon-user Personas
-                        b.caret
-                    ul.dropdown-menu
-                        li
-                            a(href='#/persons') Lista
-                        li
-                            a(href='#/persons/new') Nueva
-            ul.nav.navbar-nav.pull-right
-                li.dropdown
-                    a.dropdown-toggle(data-toggle='dropdown' href='#')
-                        span.glyphicon.glyphicon-user Usuario 
-                        b.caret
-                    ul.dropdown-menu
-                        li
-                            a(href='#') Logout
+            div.collapse.navbar-collapse(id='main-menu')
+                ul.nav.navbar-nav
+                    li.dropdown
+                        a.dropdown-toggle(data-toggle='dropdown' href='#') 
+                            span.glyphicon.glyphicon-user Personas
+                            b.caret
+                        ul.dropdown-menu
+                            li
+                                a(href='#/persons') Lista
+                            li
+                                a(href='#/persons/new') Nueva
+                ul.nav.navbar-nav.pull-right
+                    li.dropdown
+                        a.dropdown-toggle(data-toggle='dropdown' href='#')
+                            span.glyphicon.glyphicon-user Usuario 
+                            b.caret
+                        ul.dropdown-menu
+                            li
+                                a(href='#') Logout
     div.container
         div(ng-view)
