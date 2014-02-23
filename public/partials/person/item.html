@@ -19,10 +19,9 @@
       </button>
       <div ng-repeat="email in person.emails track by $index" class="form-group">
         <div class="input-group">
-          <label>Correo</label>
           <input type="text" class="form-control" ng-model="email" placeholder="Escribe un correo">
           <span class="input-group-btn">
-            <button class="btn btn-danger" type="button" ng-click="deleteEmail(email)">&times;</button>
+            <button class="btn btn-danger" type="button" ng-click="deleteEmail(email)"><span class="glyphicon glyphicon-remove"> </span></button>
           </span>
         </div>
       </div>
@@ -35,9 +34,12 @@
         <span class="glyphicon glyphicon-plus"> </span>
       </button>
       <div ng-repeat="phone in person.phones track by $index" class="form-group">
-        <label>Telefono</label>
-        <button type="button" class="btn btn-xs btn-primary" ng-click="deletePhone(phone)">&times;</button>
-        <input type="text" class="form-control" ng-model="phone" placeholder="Escribe un Telefono">
+        <div class="input-group">
+          <input type="text" class="form-control" ng-model="phone" placeholder="Escribe un telefono">
+          <span class="input-group-btn">
+            <button class="btn btn-danger" type="button" ng-click="deletePhone(phone)"><span class="glyphicon glyphicon-remove"> </span></button>
+          </span>
+        </div>
       </div>
     </div>
   </div>
