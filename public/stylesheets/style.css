@@ -52,6 +52,6 @@ img.brand {
 	padding: 7px 9px;
 }
 
-.nav,.pagination,.carousel,.panel-title a {
+.nav, .pagination, .carousel, .panel-title a {
 	cursor: pointer;
 }
