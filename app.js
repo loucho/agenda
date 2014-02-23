@@ -50,6 +50,8 @@ app.get('/api/person/:id', person.get(db));
 app.post('/api/person', person.create(db));
 app.post('/users/add', user.add(db));
 
+app.delete('/api/person', person.delete(db));
+
 http.createServer(app).listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
 });

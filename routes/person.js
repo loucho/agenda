@@ -27,6 +27,18 @@ exports.get = function(db){
 };
 
 /**
+ * JSON API for deleting a single Person
+ */
+exports.delete = function(db){
+    return function(req, res){
+        var personCollection = db.get('PersonCollection');
+        personCollection.remove({_id: req.params.id}, {}, function(error, person){
+            res.json(person);
+        });
+    };
+};
+
+/**
  * JSON API for creating a new Person
  */
 exports.create = function(db){

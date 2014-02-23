@@ -1,8 +1,14 @@
 var personControllers = angular.module('personControllers', []);
 
 // Managing the person list
-personControllers.controller('PersonListController', ['$scope', 'Person', function($scope, Person){
+personControllers.controller('PersonListController', ['$scope', 'Person', '$location', function($scope, Person, $location){
     $scope.persons = Person.query();
+
+    $scope.deletePerson = function(id){
+        Person.$delete({personId: id}, function(){
+            $location.path('persons');
+        });
+    };
 }]);
 
 // viewing individual persons

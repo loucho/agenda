@@ -25,6 +25,7 @@
         <th>Correos</th>
         <th>Telefonos</th>
         <th>Agregado el</th>
+        <th>Acciones</th>
       </tr>
       <tr ng-repeat="person in persons | filter:query">
         <td><a href="#/person/{{person._id}}">{{person.name + " " + person.last_name + " " + person.second_last_name}}</a></td>
@@ -43,6 +44,7 @@
           </ul> 
         </td>
         <td>{{person.created}}</td>
+        <td><a href="#" type="button" class="btn btn-danger" ng-click="deletePerson(person._id)"><span class="glyphicon glyphicon-remove"></span></a></td>
       </tr>
     </table>
   </div>
