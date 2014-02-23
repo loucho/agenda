@@ -29,18 +29,19 @@
       <tr ng-repeat="person in persons | filter:query">
         <td><a href="#/person/{{person._id}}">{{person.name + " " + person.last_name + " " + person.second_last_name}}</a></td>
         <td>
-          <ol>
+          <ul>
             <li ng-repeat="email in person.emails">
               {{email.value}}
             </li>
-          </ol> 
+          </ul> 
         </td>
         <td>          
-          <ol>
+          <ul>
             <li ng-repeat="phone in person.phones">
               {{phone.value}}
             </li>
-          </ol> </td>
+          </ul> 
+        </td>
         <td>{{person.created}}</td>
       </tr>
     </table>
