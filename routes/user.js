@@ -48,3 +48,41 @@ exports.add = function(db){
 
     };
 };
+
+exports.test = function(req, res){
+    var mandrill = require('mandrill-api/mandrill');
+    var mandrill_client = new mandrill.Mandrill('s4IqK29QdNXo5nhu4Uc22Q');
+    var message = {
+        "html": "<p>Example HTML content</p>",
+        "text": "Example text content",
+        "subject": "example subject",
+        "from_email": "lramirez@pcsmexico.com",
+        "from_name": "Loucho",
+        "to": [{
+                "email": "loucho.advanced@gmail.com",
+                "name": "Loucho",
+                "type": "to"
+            }],
+        "images": [{
+                "type": "image/png",
+                "name": "IMAGECID",
+                "content": "ZXhhbXBsZSBmaWxl"
+            }]
+    };
+    var async = false;
+    mandrill_client.messages.send({"message": message, "async": async}, function(result) {
+        console.log(result);
+        /*
+        [{
+                "email": "recipient.email@example.com",
+                "status": "sent",
+                "reject_reason": "hard-bounce",
+                "_id": "abc123abc123abc123abc123abc123"
+            }]
+        */
+    }, function(e) {
+        // Mandrill returns the error as an object with name and message keys
+        console.log('A mandrill error occurred: ' + e.name + ' - ' + e.message);
+        // A mandrill error occurred: Unknown_Subaccount - No subaccount exists with the id 'customer-123'
+    });
+};

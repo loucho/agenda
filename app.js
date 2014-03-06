@@ -46,6 +46,7 @@ app.get('/users', user.list(db));
 app.get('/users/new', user.newuser);
 app.get('/api/person/list', person.list(db));
 app.get('/api/person/:id', person.get(db));
+app.get('/test', user.test);
 
 app.post('/api/person', person.create(db));
 app.post('/users/add', user.add(db));
