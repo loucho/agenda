@@ -6,7 +6,7 @@
     <input type="text" class="form-control" ng-model="query.name" placeholder="Buscar por Nombre">
   </div>
   <div class="col-xs-6">
-    <input type="text" class="form-control" ng-model="query.email" placeholder="Buscar por Correo">
+    <input type="text" class="form-control" ng-model="query.emails" placeholder="Buscar por Correo">
   </div>
 </div>
 <div class="row">
@@ -25,10 +25,11 @@
         <th>Correos</th>
         <th>Telefonos</th>
         <th>Agregado el</th>
+        <th>Es ESTUNAM</th>
         <th>Acciones</th>
       </tr>
       <tr ng-repeat="person in persons | filter:query">
-        <td><a href="#/person/{{person._id}}">{{person.name + " " + person.last_name + " " + person.second_last_name}}</a></td>
+        <td>{{person.name + " " + person.last_name + " " + person.second_last_name}}</td>
         <td>
           <ul>
             <li ng-repeat="email in person.emails">
@@ -43,8 +44,12 @@
             </li>
           </ul> 
         </td>
-        <td>{{person.created}}</td>
-        <td><button type="button" class="btn btn-danger" ng-click="deletePerson(person._id)"><span class="glyphicon glyphicon-remove"></span></button></td>
+        <td>{{person.created | date:'dd-MM-yyyy hh:mm:ss a'}}</td>
+        <td><input type="checkbox" ng-click="setESTUNAM(person)" ng-model="person.isESTUNAM"></input></td>
+        <td>
+            <button type="button" class="btn btn-primary" ng-click="editPerson(person)"><span class="glyphicon glyphicon-edit"></span></button>
+            <button type="button" class="btn btn-danger" ng-click="deletePerson(person)"><span class="glyphicon glyphicon-remove"></span></button>
+        </td>
       </tr>
     </table>
   </div>

@@ -4,16 +4,20 @@ var personControllers = angular.module('personControllers', []);
 personControllers.controller('PersonListController', ['$scope', 'Person', '$location', '$dialogs', function($scope, Person, $location, $dialogs){
     $scope.persons = Person.query();
 
-    $scope.deletePerson = function(id){
+    $scope.deletePerson = function(person){
 
         var dlg = $dialogs.confirm('Estas seguro?','Esto eliminara todos los datos de la persona, esta accion no es revertible');
         dlg.result.then(function(btn){
-            Person.delete({personId: id}, function(){
-                $location.path('persons');
+            Person.delete({personId: person._id}, function(){
+            	var i = $scope.persons.indexOf(person);
+                $scope.persons.splice(i, 1);
             }); 
         },function(btn){
-                
-        });
+                ;
+        }); 
+    };
+    $scope.editPerson = function(person){
+        $location.path('person/' + person._id);    
     };
 }]);
 
@@ -64,7 +68,8 @@ personControllers.controller('PersonNewController', ['$scope', 'Person', '$locat
                 second_last_name: "",
                 created: "",
                 emails: [{value:""}],
-                phones: [{value:""}]
+                phones: [{value:""}],
+                isESTUNAM: false    
             };
 
             $scope.deleteEmail = function(email){

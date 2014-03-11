@@ -29,7 +29,7 @@ exports.get = function(db){
 /**
  * JSON API for deleting a single Person
  */
-exports.delete = function(db){
+exports.del = function(db){
     return function(req, res){
         if(!req.params.id)
             res.error('Debe proporcionar un Id');
